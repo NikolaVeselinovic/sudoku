@@ -1,0 +1,55 @@
+*{box-sizing: border-box;}
+body{font: normal 16px/2 rock-salt; color: #edf1f7;}
+a{ color: #edf1f7; text-decoration: none;}
+a:hover{text-decoration:underline }
+body > div{visibility: hidden;}
+header{background-color: #1761d8; height: 10vh; }
+header .menu{display: flex; justify-content: space-between;padding: 1em;max-width: 650px; margin-left: auto; margin-right: auto;}
+header a{ font-size: 1.8em; }
+
+main h1{display: none;}
+main{background-color: #edf1f7 ; height: 80vh;  }
+main .on{position: relative; height:100%;}
+main .on.paus{display: none;}
+main .on span{text-align: center;}
+main .check{position:relative; height:100%; display: none;}
+main .check h3{font-size:4em; width: 100%; text-align: center;}
+main .check .button-title{display: flex; justify-content: space-around;}
+main .check .button-title span{font-size:2em; width: 100%; text-align: center;}
+main .check .button-title span .stopwatch{font-size:1em;}
+main .check .button-title span a{font-size: 1.2em;}
+main .check .button-title a{border:none; background: none; font-size: 2em;letter-spacing: 7px; text-align: center;}
+main .check .button-title a:hover{background: none; text-decoration: underline; color: #edf1f7;}
+main .on.paus img{padding-left: 0.6em;margin-top: -0.4em;}
+main .cover{ background-color: rgba(162, 173, 205, 0.95);position: absolute;width: 100%;height: 125.6%;top: -13%; }
+main .button-title{width: 50%; height: 50%;margin: auto;position: absolute;top: -17%; left: 0; bottom: 0; right: 0;
+	display: flex;flex-wrap: wrap;justify-content: center;}
+main .on .button-title a{background-color: #1660d7; border-radius: 50%;display: inline-block;text-align: center;padding: 1.72em 0.4em;
+				font-size: 4.3em;text-transform: uppercase;letter-spacing: 15px; width: 42.7%; min-width: 5.47em; height: 5.58em;}
+main .on .button-title a:hover{text-decoration: none; color:#b8d0ef; background-color: #153e7c;}
+main .on .button-title span{font-size: 3em;}
+
+main .table{display: none;align-items: center;justify-content: space-around; height: 100%; flex-wrap: wrap; max-width: 1500px; margin: 0 auto;}
+main .tbl-holder{width: 45%; min-width: 670px;}
+main .img-holder{width: 27%; padding: 0 1em;}
+main .table #sudoku{border: 4px solid #1761d8; color: black; white-space: nowrap; margin: auto;}
+main .table #sudoku td{border: 2px solid #9fa8b7; color: black; font-size: 1.7em; padding: 0; background-color: #dbe7fc; min-width: 2.75em; max-width: 2.75em; 
+						text-overflow:ellipsis;overflow:hidden;white-space:nowrap; padding: 0.03em;}
+main .table #sudoku tr td:nth-child(3n){border-right: 4px solid blue;}
+main .table #sudoku tr:nth-child(3n){border-bottom: 4px solid blue;}
+main .table #sudoku input{padding: 0.1em 0.8em; width:70px;}
+
+footer{background-color: #1761d8; height:10vh;display: flex; justify-content: center; padding: 0 1em;padding-top: 1em;}
+footer .stopwatch{font-size: 1.8em;letter-spacing: 6px; padding-right: 3.1em; width: 300px;}
+footer a{ font-size: 1.9em; } 
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
