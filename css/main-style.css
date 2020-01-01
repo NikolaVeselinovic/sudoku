@@ -53,31 +53,11 @@ footer a{ font-size: 1.9em; }
 .welcome { background-image: url('../img/login.jpg'); display: flex; justify-content: center; background-repeat: no-repeat; position: relative; background-size: cover; height: 100vh; }
 .welcome form, .signup { display: flex; flex-flow: column wrap; justify-content: center; align-items: center; margin: auto 1em; max-width: 400px; width: 100%; max-height: 500px; padding: 2em; border-radius: 1em; background-color: rgba(214, 242, 254,0.4); }
 .welcome form em, .signup em { letter-spacing: 0.084em; font-weight: 700; font-size: 3.8em; color:rgb(60, 92, 117); text-transform: uppercase; }
-.welcome form .warning { color: #831602; font-weight: 600; }
+.welcome form .warning { color: #d20a0a; font-weight: 600; }
 .welcome form input, .welcome form button,.signup button { position: relative; display: block; padding: 0.8em 2.2em; border-radius: 10em; margin: 1.5em 0; width: 100%; color: #103c5b;}
-.welcome form button,.signup button { background-color:
-    #d3d4d6;
-    
-    color:
-    #103c56;
-    
-    font-weight: 500;
-    
-    padding: 0.8em 2.2em;
-    
-    font-weight: bold;
-    
-    text-transform: uppercase;
-    }
+.welcome .signup button, .welcome .signup input { margin: 1em 0;}
+.welcome form button,.signup button { background-color: #d3d4d6; color: #103c56; font-weight: 500; padding: 0.8em 2.2em; font-weight: bold; text-transform: uppercase; }
 .frm-btn:hover:after, .signup button:hover:after { width: 120%; background-color: rgba(255,255,255,0); -webkit-transition: all 0.4s ease-in-out; -moz-transition: all 0.4s ease-in-out; transition: all 0.4s ease-in-out; }
-.welcome form p,.welcome .signup span { color:
-    rgb(16, 60, 86);
-    
-    font-weight: 900;
-    
-    text-align: justify;
-  
-    
-    font-size: 0.8em; }
+.welcome form p,.welcome .signup span { color: rgb(16, 60, 86); font-weight: 900; text-align: justify; font-size: 0.8em; }
 .welcome a { color: rgb(214, 242, 254); font-weight: 900; }
 .welcome .signup { max-height: 700px;} 
