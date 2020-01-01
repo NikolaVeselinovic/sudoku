@@ -1,32 +1,50 @@
 <?php
-// session_start();
-// include("user.php");
+session_start();
+include("back-end/user.php");
 
-// if (!empty($_POST)) {
-//     if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['email']) && isset($_POST['password'])) {
+if (!empty($_POST)) {
+    if (isset($_POST['user_name']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['name'])&& isset($_POST['lastname'])) {
+        $user_name = trim($_POST['user_name']);
+        $password = trim($_POST['password']);
+        $password_hash = md5($password);
+        $email = trim($_POST['email']);
+        $name = trim($_POST['name']);
+        $lastname = trim($_POST['lastname']);
+        
+       
+        
 
-//         include("database.php");
-//         $db = new database("mydatabase");
+        if ((!empty($user_name)) && (!empty($password)) && (!empty($email)) && (!empty($name)) && (!empty($lastname))) {
+            $data = array("email" => $email, "password" => $password_hash, "name"=>$name, "user_name"=>$user_name, "lastname"=>$lastname);
+            $data_string = json_encode($data);
 
-//         $firstname = trim($_POST['firstname']);
-//         $lastname = trim($_POST['lastname']);
-//         $email = trim($_POST['email']);
-//         $password = trim($_POST['password']);
-//         $password_hash = md5($password);
+            $ch = curl_init('http://localhost/sudoku/back-end/signup');
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt(
+                $ch,
+                CURLOPT_HTTPHEADER,
+                array(
+                    'Content-Type: application/json',
+                    'Content-Length: ' . strlen($data_string)
+                )
+            );
 
-//         if ((!empty($firstname)) && (!empty($lastname)) && (!empty($email)) && (!empty($password_hash))) {
-            
-//             if ($db->addUser($firstname, $lastname, $email, $password_hash)) {
-//                 $lastId=$db->dblink->insert_id;
-//                 $user = new User($lastId, $firstname, $lastname, $email, $password);
-//                 $_SESSION['user'] = $user;
-//                 header("Location:home.php");
-//             } else {
-//                 echo 'User is not entered in database!';
-//             }
-//         }
-//     }
-// }
+            $result = curl_exec($ch);
+            var_dump($result);
+            die();
+            // if ($db->addUser($firstname, $lastname, $email, $password_hash)) {
+            //     $lastId=$db->dblink->insert_id;
+            //     $user = new User($lastId, $firstname, $lastname, $email, $password);
+            //     $_SESSION['user'] = $user;
+            //     header("Location:home.php");
+            // } else {
+            //     echo 'User is not entered in database!';
+            // }
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -50,8 +68,9 @@
                 <em>Sign up</em>
                 <span>It's quick and easy!</span>
 
-                <input type="text" name="firstname" placeholder="First name" required>
+                <input type="text" name="name" placeholder="Name" required>
                 <input type="text" name="lastname" placeholder="Last name" required>
+                <input type="text" name="user_name" placeholder="Username" required>
                 <input type="text" name="email" placeholder="E-mail" required>
                 <input type="password" name="password" placeholder="Password" required>
 
