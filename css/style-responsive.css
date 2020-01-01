@@ -52,8 +52,9 @@
 	.check{font-size: 0.6em;}
 	main.sudoku-grid .on.paus img{width:80%; height: auto;}
 }
-@media all and (max-width:500px){
-	.welcome form { background-color: rgba(211, 212, 216, 0.85); }
+@media all and (max-width:420px){
+	.welcome form { background-color: rgba(214, 242, 254,0.6); }
+	.welcome .signup em { font-size: 2.6em;}
 }
 
 @media all and (max-width:380px){
@@ -62,5 +63,5 @@
 }
 @media all and (max-width:334px){
     .welcome .signup p { font-size: 0.6em; }
-    .welcome .signup em { font-size: 2.8em; }
+    
 }

@@ -79,5 +79,5 @@ footer a{ font-size: 1.9em; }
   
     
     font-size: 0.8em; }
-.welcome a { color: rgb(214, 242, 254); font-weight: 900; }
+.welcome a { color: rgb(0, 101, 144); font-weight: 900; font-size: 1.2em;}
 .welcome .signup { max-height: 700px;} 
