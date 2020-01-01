@@ -35,7 +35,12 @@ class Database
     function addUser($username, $email, $password, $name, $lastname){
         $query="INSERT INTO `user`(`user_name`, `password`, `email`, `name`, `lastname`, `isAdmin`) VALUES ('".$username."','".$password."','".$email."','".$name."','".$lastname."',0)";
         if ($this->dblink->query($query)) {
-            return true;
+            $last_id = $this->dblink->insert_id;
+            $query = "SELECT `id`, `user_name`, `password`, `email`, `name`, `lastname`, `isAdmin` FROM `user` WHERE `id`='" . $last_id . "' LIMIT 0, 25";
+            if ($this->result = $this->dblink->query($query)) {
+                return true;
+            }
+            return false;
         } else {
             return false;
         }

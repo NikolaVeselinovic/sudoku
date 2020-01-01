@@ -32,8 +32,12 @@ Flight::route('POST /signup', function () {
             return false;
         } else {
             if ($db->addUser($podaci->user_name, $podaci->email, $podaci->password, $podaci->name, $podaci->lastname)) {
-
-                $odgovor["message"] = "User added.";
+                if ($db->result->num_rows > 0) {
+                    $odgovor = $db->result->fetch_object();
+                }else{
+                    $odgovor["message"] = "Error";
+                }
+                
             } else {
                 $odgovor["message"] = "Error";
             }
