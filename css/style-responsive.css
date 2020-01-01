@@ -1,59 +1,66 @@
 @media all and (max-width:1460px){
-	main .img-holder{width: 20%;}
+	main.sudoku-grid .img-holder{width: 20%;}
 }
 @media all and (max-height:850px){
-	main .table #sudoku td{font-size: 1.3em;}
-	main .tbl-holder{min-width: 520px;}
+	main.sudoku-grid .table #sudoku td{font-size: 1.3em;}
+	main.sudoku-grid .tbl-holder{min-width: 520px;}
 }
 @media all and (max-width: 1130px){
-	main .table #sudoku td{font-size: 1.3em;}
-	main .tbl-holder{min-width: 520px;}
+	main.sudoku-grid .table #sudoku td{font-size: 1.3em;}
+	main.sudoku-grid .tbl-holder{min-width: 520px;}
 
 }
 @media all and (max-width: 870px){
-	main .img-holder{display: none;}
+	main.sudoku-grid .img-holder{display: none;}
 	.p{font-size: 0.8em;}
 
 }
 @media all and (max-width:620px){
 	.on{font-size: 0.8em;}
 	.check{font-size: 0.8em;}
-	main .on.paus img{width:80%; height: auto;}
+	main.sudoku-grid .on.paus img{width:80%; height: auto;}
 }
 @media all and (max-height:750px){
 	.on{font-size: 0.8em;}
 	.check{font-size: 0.8em;}
-	main .on.paus img{width:80%; height: auto;}
+	main.sudoku-grid .on.paus img{width:80%; height: auto;}
 }
 @media all and (max-height:700px){
 	header a{ font-size: 1.3em; }
 	footer a{ font-size: 1.3em; }
 	footer .stopwatch{ font-size: 1.3em; }
-	main .table #sudoku td{font-size: 1.1em;}
+	main.sudoku-grid .table #sudoku td{font-size: 1.1em;}
 }
 @media all and (max-height:620px){
 	header a{ font-size: 1.1em; }
 	footer a{ font-size: 1.1em; }
 	footer .stopwatch{ font-size: 1.1em; }
-	main .table #sudoku td{font-size: 0.9em;}
+	main.sudoku-grid .table #sudoku td{font-size: 0.9em;}
 	.on{font-size: 0.6em;}
 	.check{font-size: 0.6em;}
-	main .on.paus img{width:80%; height: auto;}
-	main .button-title{top:-46%;}
+	main.sudoku-grid .on.paus img{width:80%; height: auto;}
+	main.sudoku-grid .button-title{top:-46%;}
 }
 
 @media all and (max-width:550px){
 	header a{ font-size: 1.1em; }
 	footer a{ font-size: 1.1em; }
 	footer .stopwatch{ font-size: 1.1em; }
-	main .table #sudoku td{font-size: 0.9em;}
-	main .tbl-holder{min-width: 360px;}
+	main.sudoku-grid .table #sudoku td{font-size: 0.9em;}
+	main.sudoku-grid .tbl-holder{min-width: 360px;}
 	.on{font-size: 0.6em;}
 	.check{font-size: 0.6em;}
-	main .on.paus img{width:80%; height: auto;}
+	main.sudoku-grid .on.paus img{width:80%; height: auto;}
+}
+@media all and (max-width:500px){
+	.welcome form { background-color: rgba(211, 212, 216, 0.85); }
 }
 
 @media all and (max-width:380px){
-	main .table #sudoku td{font-size: 0.7em;}
-	main .tbl-holder{min-width: 282px;}
+	main.sudoku-grid .table #sudoku td{font-size: 0.7em;}
+	main.sudoku-grid .tbl-holder{min-width: 282px;}
+}
+@media all and (max-width:334px){
+    .welcome .signup p { font-size: 0.6em; }
+    .welcome .signup em { font-size: 2.8em; }
 }

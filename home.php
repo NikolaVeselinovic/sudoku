@@ -17,7 +17,7 @@
 			<a href="#" class="restart">Restart</a>
 		</div>
 	</header>
-	<main>
+	<main class="sudoku-grid">
 		<h1>Sudoku</h1>
 		<div class="on open">
 			<div class="cover"> </div>

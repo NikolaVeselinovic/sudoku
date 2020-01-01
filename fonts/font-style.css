@@ -1,7 +1,21 @@
 
 @font-face {
-    font-family: 'rock-salt';
+    font-family: "rock_salt";
     src: url('rock-salt.ttf');
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: "indie_flower";
+    src: url('hinted-IndieFlower.eot');
+    src: local('Indie Flower'), local('IndieFlower'),
+        url('hinted-IndieFlower.eot?#iefix') format('embedded-opentype'),
+        url('hinted-IndieFlower.woff2') format('woff2'),
+        url('hinted-IndieFlower.woff') format('woff'),
+        url('hinted-IndieFlower.ttf') format('truetype'),
+        url('hinted-IndieFlower.svg#IndieFlower') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
