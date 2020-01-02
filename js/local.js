@@ -363,3 +363,5 @@ $(".restart").click(function(){
 	$(".check.f").hide();
 	printSudoku();
 });
+
+

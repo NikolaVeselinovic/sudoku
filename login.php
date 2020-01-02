@@ -33,7 +33,7 @@ if (!empty($_POST)) {
             if (property_exists($result_json, 'id')) {
                 $user = new User($result_json->id, $result_json->user_name, $result_json->password, $result_json->email, $result_json->name, $result_json->lastname, $result_json->isAdmin);
                 $_SESSION['user'] = $user;
-                header("Location:home.php");
+                header("Location:menu.php");
             } else {
                 $invalid = 1;
             }
@@ -54,7 +54,7 @@ if (!empty($_POST)) {
     <link rel="stylesheet" type="text/css" href="css/main-style.css">
     <link rel="stylesheet" type="text/css" href="css/style-responsive.css">
 
-    <title>Login</title>
+    <title>Sudoku - Login</title>
 </head>
 
 <body>

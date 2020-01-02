@@ -61,3 +61,20 @@ footer a{ font-size: 1.9em; }
 .welcome form p,.welcome .signup span { color: rgb(16, 60, 86); font-weight: 900; text-align: justify; font-size: 1.2em; }
 .welcome a { color: rgb(214, 242, 254); font-weight: 900; }
 .welcome .signup { max-height: 700px;} 
+
+
+/*---------Main manu --------*/
+.welcome .main-menu { display: flex; flex-flow: column wrap; justify-content: center; align-items: center; margin: auto 1em; max-width: 450px; width: 100%; max-height: 550px; padding: 2em 0; border-radius: 1em; background-color: rgba(214, 242, 254,0.5); }
+.welcome .main-menu a , .welcome .main-menu p, .welcome .main-menu em { color:rgb(60, 92, 117); }
+.welcome .main-menu em, .welcome .main-menu a { display: block; padding: 0.8em 0; font-size: 1.5em; width: 100%; text-align: center;border-bottom: solid 2px#286e87;;}
+.welcome .main-menu a:hover{ background-color: rgba(61, 131, 156,0.8); color: #eaf8fe; text-decoration: none;}
+.welcome .main-menu em { color: #bb4a4a; font-weight: 900; font-variant: small-caps;}
+
+
+
+
+
+.welcome .main-menu p { letter-spacing: 0.084em; font-weight: 700; font-size: 3.8em; text-transform: uppercase; }
+
+
+/*---------------------------*/
