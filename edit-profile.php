@@ -3,6 +3,8 @@ include "back-end/user.php";
 session_start();
 if (!isset($_SESSION['user'])) {
     header("Location: login.php");
+}else{
+    $user = $_SESSION['user'];
 }
 $invalid = 0;
 $valid = 0;
@@ -10,6 +12,12 @@ $valid = 0;
 if(!empty($_GET)){
     if(isset($_GET['u'])){
         $valid=$_GET['u'];
+    }
+    if(isset($_GET['id'])){
+        $ch = curl_init('http://localhost/sudoku/back-end/user/'.$_GET['id']);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
+        $user = json_decode($result);
     }
 }
 
@@ -23,7 +31,7 @@ if (!empty($_POST)) {
         $lastname = trim($_POST['lastname']);
 
         if ((!empty($user_name)) && (!empty($password)) && (!empty($email)) && (!empty($name)) && (!empty($lastname))) {
-            $data = array("id" => $_SESSION['user']->id,"email" => $email, "password" => $password_hash, "name" => $name, "user_name" => $user_name, "lastname" => $lastname);
+            $data = array("id" => $_POST['id'],"email" => $email, "password" => $password_hash, "name" => $name, "user_name" => $user_name, "lastname" => $lastname);
             $data_string = json_encode($data);
             $ch = curl_init('http://localhost/sudoku/back-end/edit-profile');
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
@@ -38,33 +46,33 @@ if (!empty($_POST)) {
                 )
             );
             $result = curl_exec($ch);
-            var_dump($result);
             $result_json = json_decode($result);
-            var_dump($result_json);
             if (property_exists($result_json, 'id')) {
                 $user = new User($result_json->id, $result_json->user_name, $result_json->password, $result_json->email, $result_json->name, $result_json->lastname, $result_json->isAdmin);
-                $_SESSION['user'] = $user;
-                header("Location: edit-profile.php?u=1");
+                if($_SESSION['user']->id == $user->id){
+                    $_SESSION['user'] = $user;
+                }
+                header("Location: edit-profile.php?u=1&id=".$user->id);
             } else {
                 $invalid = 1;
             }
         }
     }
-}else{
-    $hash = $_SESSION['user']->password;
-    $hash_type = "md5";
-    $email = "nikolaveselinovic388@gmail.com";
-    $code = "f2ce482aab6c1b95";
-    $url = "https://md5decrypt.net/en/Api/api.php?hash=".$hash."&hash_type=".$hash_type."&email=".$email."&code=".$code;
-    $context = stream_context_create(
-        array(
-            "http" => array(
-                "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
-            )
-        )
-    );
-    $password = file_get_contents($url, false, $context);
 }
+$hash = $user->password;
+$hash_type = "md5";
+$email = "nikolaveselinovic388@gmail.com";
+$code = "f2ce482aab6c1b95";
+$url = "https://md5decrypt.net/en/Api/api.php?hash=".$hash."&hash_type=".$hash_type."&email=".$email."&code=".$code;
+$context = stream_context_create(
+    array(
+        "http" => array(
+            "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
+        )
+    )
+);
+$password = file_get_contents($url, false, $context);
+
 ?>
 
 
@@ -88,10 +96,11 @@ if (!empty($_POST)) {
         <section class="welcome">
         <form action="" method="post" class="signup edit">
                 <em>Edit profile</em>
-                <input type="text" name="name" placeholder="Name" value="<?php echo $_SESSION['user']->name; ?>" required>
-                <input type="text" name="lastname" placeholder="Last name" value="<?php echo $_SESSION['user']->lastname; ?>" required>
-                <input type="text" name="user_name" placeholder="Username" value="<?php echo $_SESSION['user']->user_name; ?>" required>
-                <input type="text" name="email" placeholder="E-mail" value="<?php echo $_SESSION['user']->email; ?>" required>
+                <input type="hidden" name="id" placeholder="id" value="<?php echo $user->id; ?>">
+                <input type="text" name="name" placeholder="Name" value="<?php echo $user->name; ?>" required>
+                <input type="text" name="lastname" placeholder="Last name" value="<?php echo $user->lastname; ?>" required>
+                <input type="text" name="user_name" placeholder="Username" value="<?php echo $user->user_name; ?>" required>
+                <input type="text" name="email" placeholder="E-mail" value="<?php echo $user->email; ?>" required>
                 <input type="password" name="password" placeholder="Password" value="<?php echo $password; ?>" required>
                 <?php if ($invalid == 1) { ?>
                     <p class="warning">Username or email already exists!</p>
