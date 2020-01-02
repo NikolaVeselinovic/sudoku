@@ -64,7 +64,7 @@ if (!empty($_POST)) {
     <link rel="stylesheet" type="text/css" href="fonts/font-style.css">
     <link rel="stylesheet" type="text/css" href="css/main-style.css">
     <link rel="stylesheet" type="text/css" href="css/style-responsive.css">
-    <title>Signup</title>
+    <title>Sudoku - Signup</title>
 </head>
 
 <body>
