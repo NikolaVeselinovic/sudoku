@@ -19,6 +19,10 @@ function logout() {
 
 
 
+
+
+
+
 /*Delete user*/
 function deleteUser(username) {
     $.ajax({

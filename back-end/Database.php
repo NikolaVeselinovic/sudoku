@@ -84,6 +84,15 @@ class Database
         }
     }
    
+    // function getAllScores(){
+    //     $query = "SELECT `result.id`, `result.user_id`, `result.timeInSeconds`, `result.date`, `user.user_name`, `user.name`, `user.lastname` FROM `result as result` INNER JOIN `user as user` ON 'user.id'='result.user_id' LIMIT 0, 25";
+    //     var_dump($query);
+    //     if ($this->result = $this->dblink->query($query)) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
 
     
 }
