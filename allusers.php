@@ -1,6 +1,11 @@
 
 <?php
 include("back-end/user.php");
+session_start();
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+}
+
  $ch = curl_init('http://localhost/sudoku/back-end/users');
  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
  $result = curl_exec($ch);
@@ -14,7 +19,8 @@ include("back-end/user.php");
     <link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/main-style.css">
 	<link rel="stylesheet" type="text/css" href="css/style-responsive.css">
-	<link rel="stylesheet" type="text/css" href="fonts/font-style.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-style.css">
+    <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>All users</title>
@@ -35,11 +41,17 @@ include("back-end/user.php");
                 <?php
                 foreach($result_json as $key => $user){?>
                 <li class="row">
+                    
                     <em><?php echo $key+1; ?></em>
                     <em><?php echo $user->user_name; ?></em>
                     <em><?php echo $user->name; ?></em>
                     <em><?php echo $user->lastname; ?></em>
-                    <em></em>
+                    <em class="icons">
+                        <?php if($user->user_name != $_SESSION['user']->user_name){?>
+                        <i class="fas fa-trash-alt" onclick="deleteUser('<?php echo $user->user_name; ?>')"></i>
+                        <?php } ?>
+                        <i class="fas fa-pencil-alt" onclick="editUser('<?php echo $user; ?>')"></i>
+                    </em>
                 </li>
                 <?php } ?>
             </ul>
@@ -48,4 +60,6 @@ include("back-end/user.php");
     </main>
     
 </body>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
 </html>

@@ -34,30 +34,29 @@ main.sudoku-grid .on .button-title a{background-color: #1660d7; border-radius: 5
 main.sudoku-grid .on .button-title a:hover{text-decoration: none; color:#b8d0ef; background-color: #153e7c;}
 main.sudoku-grid .on .button-title span{font-size: 3em;}
 
-main.sudoku-grid .table{display: none;align-items: center;justify-content: space-around; height: 100%; flex-wrap: wrap; max-width: 1500px; margin: 0 auto;}
-main.sudoku-grid .tbl-holder{width: 45%; min-width: 670px;}
-main.sudoku-grid .img-holder{width: 27%; padding: 0 1em;}
-main.sudoku-grid .table #sudoku{border: 4px solid #1761d8; color: black; white-space: nowrap; margin: auto;}
-main.sudoku-grid .table #sudoku td{border: 2px solid #9fa8b7; color: black; font-size: 1.7em; padding: 0; background-color: #dbe7fc; min-width: 2.75em; max-width: 2.75em; 
+main.sudoku-grid .table { display: none;align-items: center;justify-content: space-around; height: 100%; flex-wrap: wrap; max-width: 1500px; margin: 0 auto;}
+main.sudoku-grid .tbl-holder { width: 45%; min-width: 670px;}
+main.sudoku-grid .img-holder { width: 27%; padding: 0 1em;}
+main.sudoku-grid .table #sudoku { border: 4px solid #1761d8; color: black; white-space: nowrap; margin: auto;}
+main.sudoku-grid .table #sudoku td { border: 2px solid #9fa8b7; color: black; font-size: 1.7em; padding: 0; background-color: #dbe7fc; min-width: 2.75em; max-width: 2.75em; 
 						text-overflow:ellipsis;overflow:hidden;white-space:nowrap; padding: 0.03em;}
-main.sudoku-grid .table #sudoku tr td:nth-child(3n){border-right: 4px solid blue;}
-main.sudoku-grid .table #sudoku tr:nth-child(3n){border-bottom: 4px solid blue;}
-main.sudoku-grid .table #sudoku input{padding: 0.1em 0.8em; width:70px;}
+main.sudoku-grid .table #sudoku tr td:nth-child(3n) { border-right: 4px solid blue;}
+main.sudoku-grid .table #sudoku tr:nth-child(3n) { border-bottom: 4px solid blue;}
+main.sudoku-grid .table #sudoku input { padding: 0.1em 0.8em; width:70px;}
 
-footer{background-color: #1761d8; height:10vh;display: flex; justify-content: center; padding: 0 1em;padding-top: 1em;}
-footer .stopwatch{font-size: 1.8em;letter-spacing: 6px; padding-right: 3.1em; width: 300px;}
-footer a{ font-size: 1.9em; } 
+footer { background-color: #1761d8; height:10vh;display: flex; justify-content: center; padding: 0 1em;padding-top: 1em;}
+footer .stopwatch { font-size: 1.8em;letter-spacing: 6px; padding-right: 3.1em; width: 300px;}
+footer a { font-size: 1.9em; } 
 
 
 /*Common css for Login/Singup/Allusers*/
 .welcome { background-image: url('../img/login.jpg'); display: flex; justify-content: center; background-repeat: no-repeat; position: relative; background-size: cover; height: 100vh; }
-.welcome a { color: rgb(214, 242, 254); font-weight: 900; }
+.welcome a { color: rgb(102, 60, 117); font-weight: 900; }
 .welcome form, .welcome .signup, .welcome .allusers { display: flex; flex-flow: column wrap; justify-content: center; align-items: center; margin: auto 1em; max-width: 400px; width: 100%; max-height: 500px; padding: 2em; border-radius: 1em; background-color: rgba(214, 242, 254,0.4); }
 .welcome form em,.welcome .signup em, .welcome .allusers h5 { letter-spacing: 0.084em; font-weight: 700; font-size: 3.8em; color: rgb(102, 60, 117); text-transform: uppercase; }
 .welcome form input, .welcome form button,.wlcome.signup button { position: relative; display: block; padding: 0.8em 2.2em; border-radius: 10em; margin: 1.5em 0; width: 100%; color: #103c5b;}
 /*Login and Singup*/
 .welcome form button,.welcome .signup button { background-color: #d3d4d6; color: #103c56; font-weight: 500; padding: 0.8em 2.2em; font-weight: bold; text-transform: uppercase; }
-.welcome .frm-btn:hover:after,.welcome .signup button:hover:after { width: 120%; background-color: rgba(255,255,255,0); -webkit-transition: all 0.4s ease-in-out; -moz-transition: all 0.4s ease-in-out; transition: all 0.4s ease-in-out; }
 .welcome form p,.welcome .signup span { color: rgb(16, 60, 86); font-weight: 900; text-align: justify; font-size: 0.7em; line-height: 1.5em; }
 /*Login*/
 .welcome form .warning { color: #d20a0a; font-weight: 600; }
@@ -65,27 +64,28 @@ footer a{ font-size: 1.9em; }
 .welcome .signup button, .welcome .signup input { margin: 1em 0;}
 .welcome .signup { max-height: 700px;} 
 /*Allusers*/
-.welcome .allusers { max-width: 1000px; max-height: 900px; } 
+.welcome .allusers { max-width: 900px; max-height: 900px; }
+.welcome .allusers ul{ border: solid; border-color:#663c75; border-radius: 1em; }
+.welcome .allusers h5 { margin: 0.5em; font-size: 3.2em; font-weight: 900;}
 .welcome .allusers ul li {line-height: 2em; }
-.welcome .allusers ul li:first-child { color: #103c56; font-weight: bold; text-transform: uppercase; font-size: 1.3em; background-color: rgba(102, 60, 117, 0.5);}
+.welcome .allusers ul .row:hover{ background-color: transparent; color:rgb(102, 60, 117); }
+.welcome .allusers ul li:first-child { border-radius: 15px 15px 0 0; color: #103c56; font-weight: bold; text-transform: uppercase; font-size: 1.3em; background-image: linear-gradient(to bottom, rgba(102, 60, 117,0.5), rgba(60, 92, 117, 0.5)); }
+.welcome .allusers ul li:last-child { border-radius: 0 0 15px 15px; } 
 .welcome .allusers ul .row { background-color: rgba(60, 92, 117, 0.5); font-weight: 600;}
 .welcome .allusers em { display: inline-block; width: 12rem; text-align: center; }
 .welcome .allusers em:first-child { width: 3rem; }
 .welcome .allusers em:last-child { width: 6rem; }
+.welcome .allusers .icons { display: inline-block; visibility: hidden; }
+.welcome .allusers .icons i:hover { cursor: pointer;  color: #103c56;}
+
+
 
 
 /*---------Main manu --------*/
 .welcome .main-menu { display: flex; flex-flow: column wrap; justify-content: center; align-items: center; margin: auto 1em; max-width: 450px; width: 100%; max-height: 550px; padding: 2em 0; border-radius: 1em; background-color: rgba(214, 242, 254,0.5); }
 .welcome .main-menu a , .welcome .main-menu p, .welcome .main-menu em { color:rgb(60, 92, 117); }
 .welcome .main-menu em, .welcome .main-menu a { display: block; padding: 0.8em 0; font-size: 1.5em; width: 100%; text-align: center;border-bottom: solid 2px#286e87;;}
-.welcome .main-menu a:hover{ background-color: rgba(61, 131, 156,0.8); color: #eaf8fe; text-decoration: none;}
-.welcome .main-menu em { color: #bb4a4a; font-weight: 900; font-variant: small-caps;}
-
-
-
-
-
-.welcome .main-menu p { letter-spacing: 0.084em; font-weight: 700; font-size: 3.8em; text-transform: uppercase; }
-
-
+.welcome .main-menu a:hover{ background-image: linear-gradient(to bottom, rgba(214, 242, 254, 0.5), rgba(102, 60, 117,0.5)); color: #eaf8fe; text-decoration: none;}
+.welcome .main-menu em { color:rgb(102, 60, 117); font-weight: 900; font-variant: small-caps;}
+.welcome .main-menu p { letter-spacing: 0.084em; font-weight: 700; font-size: 3.8em; text-transform: uppercase; } 
 /*---------------------------*/

@@ -54,7 +54,15 @@ class Database
         }
     }
     
-    
+    function deleteUser($username){
+        $query="DELETE FROM `user` WHERE `user_name`='" . $username . "'";
+        if ($this->dblink->query($query)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+   
 
     
 }

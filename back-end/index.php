@@ -99,5 +99,23 @@ Flight::route('GET /users', function () {
     
 });
 
+Flight::route('DELETE /user/@username', function($username){
+    header ("Content-Type: application/json; charset=utf-8");
+    $db = Flight::db();
+    if ($db->deleteUser($username)){
+            $response["message"] = "User successfully deleted!";
+            $json_response = json_encode ($response,JSON_UNESCAPED_UNICODE);
+            echo $json_response;
+            return false;
+    } else {
+            $response["message"] = "Error";
+            $json_response = json_encode ($response,JSON_UNESCAPED_UNICODE);
+            echo $json_response;
+            return false;
+    
+    }		
+            
+});
+
 
 Flight::start();
