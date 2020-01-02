@@ -32,6 +32,14 @@ class Database
             return false;
         }
     }
+    function getUserById($id){
+        $query = "SELECT `id`, `user_name`, `password`, `email`, `name`, `lastname`, `isAdmin` FROM `user` WHERE `id`='" . $id. "' LIMIT 0, 25";
+        if ($this->result = $this->dblink->query($query)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     function addUser($username, $email, $password, $name, $lastname){
         $query="INSERT INTO `user`(`user_name`, `password`, `email`, `name`, `lastname`, `isAdmin`) VALUES ('".$username."','".$password."','".$email."','".$name."','".$lastname."',0)";
         if ($this->dblink->query($query)) {

@@ -10,7 +10,6 @@ if (!isset($_SESSION['user'])) {
  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
  $result = curl_exec($ch);
  $result_json = json_decode($result);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +49,7 @@ if (!isset($_SESSION['user'])) {
                         <?php if($user->user_name != $_SESSION['user']->user_name){?>
                         <i class="fas fa-trash-alt" onclick="deleteUser('<?php echo $user->user_name; ?>')"></i>
                         <?php } ?>
-                        <i class="fas fa-pencil-alt" onclick="editUser('<?php echo $user; ?>')"></i>
+                        <i class="fas fa-pencil-alt" onclick="editUser('<?php echo $user->id; ?>')"></i>
                     </em>
                 </li>
                 <?php } ?>

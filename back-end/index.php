@@ -134,6 +134,27 @@ Flight::route('DELETE /user/@username', function($username){
     }		
             
 });
+Flight::route('GET /user/@id', function($id){
+    header ("Content-Type: application/json; charset=utf-8");
+    $db = Flight::db();
+    if ($db->getUserById($id)){
+        if ($db->result->num_rows > 0) {
+            $response =  $db->result->fetch_object();               
+        } else {
+            $response["message"] = "Error";
+        }
+        $json_response = json_encode ($response,JSON_UNESCAPED_UNICODE);
+        echo $json_response;
+        return false;
+    } else {
+            $response["message"] = "Error";
+            $json_response = json_encode ($response,JSON_UNESCAPED_UNICODE);
+            echo $json_response;
+            return false;
+    
+    }		
+            
+});
 
 
 Flight::route('POST /edit-profile', function () {
