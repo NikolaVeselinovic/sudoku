@@ -99,6 +99,24 @@ Flight::route('GET /users', function () {
     
 });
 
+// Flight::route('GET /results', function(){
+// 	header ("Content-Type: application/json; charset=utf-8");
+// 	$db = Flight::db();
+//     if ($db->getAllScores()) {
+//         if ($db->result->num_rows > 0) {
+//             $odgovor = [];
+//             while($row = $db->result->fetch_object()){
+//                 array_push($odgovor, $row);
+//             }                
+//         } else {
+//             $odgovor["message"] = "Error";
+//         }
+//     }
+//     $json_odgovor = json_encode($odgovor, JSON_UNESCAPED_UNICODE);
+//     echo $json_odgovor;
+//     return false;
+// });
+
 Flight::route('DELETE /user/@username', function($username){
     header ("Content-Type: application/json; charset=utf-8");
     $db = Flight::db();

@@ -49,38 +49,50 @@ footer .stopwatch { font-size: 1.8em;letter-spacing: 6px; padding-right: 3.1em; 
 footer a { font-size: 1.9em; } 
 
 
-/*Common css for Login/Singup/Allusers*/
+/*Common css for Login & Singup & Alluser & Rank */
 .welcome { background-image: url('../img/login.jpg'); display: flex; justify-content: center; background-repeat: no-repeat; position: relative; background-size: cover; height: 100vh; }
 .welcome a { color: rgb(102, 60, 117); font-weight: 900; }
-.welcome form, .welcome .signup, .welcome .allusers { display: flex; flex-flow: column wrap; justify-content: center; align-items: center; margin: auto 1em; max-width: 400px; width: 100%; max-height: 500px; padding: 2em; border-radius: 1em; background-color: rgba(214, 242, 254,0.4); }
-.welcome form em,.welcome .signup em, .welcome .allusers h5 { letter-spacing: 0.084em; font-weight: 700; font-size: 3.8em; color: rgb(102, 60, 117); text-transform: uppercase; }
+.welcome form, .welcome .signup, .welcome .allusers, .welcome .rank { display: flex; flex-flow: column wrap; justify-content: center; align-items: center; margin: auto 1em; max-width: 400px; width: 100%; max-height: 500px; padding: 2em; border-radius: 1em; background-color: rgba(214, 242, 254,0.4); }
+.welcome form em,.welcome .signup em, .welcome .allusers h5, .welcome .rank h5 { letter-spacing: 0.084em; font-weight: 700; font-size: 3.8em; color: rgb(102, 60, 117); text-transform: uppercase; }
 .welcome form input, .welcome form button,.wlcome.signup button { position: relative; display: block; padding: 0.8em 2.2em; border-radius: 10em; margin: 1.5em 0; width: 100%; color: #103c5b;}
+/*---------------------  */
+
+
 /*Login and Singup*/
 .welcome form button,.welcome .signup button { background-color: #d3d4d6; color: #103c56; font-weight: 500; padding: 0.8em 2.2em; font-weight: bold; text-transform: uppercase; }
 .welcome form p,.welcome .signup span { color: rgb(16, 60, 86); font-weight: 900; text-align: justify; font-size: 0.7em; line-height: 1.5em; }
+/*---------------------  */
+
+
 /*Login*/
 .welcome form .warning { color: #d20a0a; font-weight: 600; }
+/*---------------------  */
+
+
 /*Signup*/
 .welcome .signup button, .welcome .signup input { margin: 1em 0;}
 .welcome .signup { max-height: 700px;} 
-/*Allusers*/
-.welcome .allusers { max-width: 900px; max-height: 900px; }
-.welcome .allusers ul{ border: solid; border-color:#663c75; border-radius: 1em; }
-.welcome .allusers h5 { margin: 0.5em; font-size: 3.2em; font-weight: 900;}
-.welcome .allusers ul li {line-height: 2em; }
-.welcome .allusers ul .row:hover{ background-color: transparent; color:rgb(102, 60, 117); }
-.welcome .allusers ul li:first-child { border-radius: 15px 15px 0 0; color: #103c56; font-weight: bold; text-transform: uppercase; font-size: 1.3em; background-image: linear-gradient(to bottom, rgba(102, 60, 117,0.5), rgba(60, 92, 117, 0.5)); }
-.welcome .allusers ul li:last-child { border-radius: 0 0 15px 15px; } 
-.welcome .allusers ul .row { background-color: rgba(60, 92, 117, 0.5); font-weight: 600;}
-.welcome .allusers em { display: inline-block; width: 12rem; text-align: center; }
-.welcome .allusers em:first-child { width: 3rem; }
-.welcome .allusers em:last-child { width: 6rem; }
+/*---------------------  */
+
+
+/*Allusers & Rank*/
+.welcome .allusers, .welcome .rank { max-width: 900px; max-height: 900px; }
+.welcome .allusers ul, .welcome .rank ul { border: solid; border-color:#663c75; border-radius: 1em; }
+.welcome .allusers h5, .welcome .rank h5 { margin: 0.5em; font-size: 3.2em; font-weight: 900;}
+.welcome .allusers ul li, .welcome .rank ul li {line-height: 2em; }
+.welcome .allusers ul .row:hover, .welcome .rank ul .row:hover{ background-color: transparent; color:rgb(102, 60, 117); }
+.welcome .allusers ul li:first-child, .welcome .rank ul li:first-child{ border-radius: 15px 15px 0 0; color: #103c56; font-weight: bold; text-transform: uppercase; font-size: 1.3em; background-image: linear-gradient(to bottom, rgba(102, 60, 117,0.5), rgba(60, 92, 117, 0.5)); }
+.welcome .allusers ul li:last-child, .welcome .rank ul li:last-child { border-radius: 0 0 15px 15px; } 
+.welcome .allusers ul .row, .welcome .rank ul .row { background-color: rgba(60, 92, 117, 0.5); font-weight: 600;}
+.welcome .allusers em, .welcome .rank em { display: inline-block; width: 12rem; text-align: center; }
+.welcome .allusers em:first-child, .welcome .rank  em:first-child { width: 3rem; }
+.welcome .allusers em:last-child, .welcome .rank em:last-child { width: 6rem; }
 .welcome .allusers .icons { display: inline-block; visibility: hidden; }
 .welcome .allusers .icons i:hover { cursor: pointer;  color: #103c56;}
+/*---------------------  */
 
 
-
-/* edit-profile */
+/* Edit-profile */
 .welcome .edit {text-align: center;}
 .welcome .edit a {color: rgb(102, 60, 117);}
 .welcome .warning.good {color: rgb(5, 101, 49);}

@@ -21,10 +21,7 @@ function(){
 
 /*Delete user*/
 function deleteUser(username) {
-  console.log("sasasjadjasd");
-  // $.delete("http://localhost/sudoku/back-end/user/".$username, function (data) {
 
-  // });
   $.ajax({
     url: "http://localhost/sudoku/back-end/user/"+username,
     type: 'DELETE',
