@@ -71,7 +71,7 @@ if (!empty($_POST)) {
     <main>
         <section class="welcome">
             <form action="" method="post" class="signup">
-                <em>Sign up</em>
+                <em>Signup</em>
                 <span>It's quick and easy!</span>
 
                 <input type="text" name="name" placeholder="Name" required>
