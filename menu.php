@@ -30,10 +30,10 @@ if (!isset($_SESSION['user'])) {
                 <em>Hi <?php echo $_SESSION['user']->name . ' ' .  $_SESSION['user']->lastname ?>!</em>
                 <a href="home.php">New Game</a>
                 <a href="#">Ranking List</a>
-                <a href="#">Edit Profile</a>
-                <a href="#">All Users</a>
-                <!-- id="myLink" title="Click to do something"
- href="#" onclick="MyFunction();return false;" -->
+                <a href="edit-profile.php">Edit Profile</a>
+                <?php if($_SESSION['user']->isAdmin){ ?>
+                    <a href="allusers.php">All Users</a>
+                <?php } ?>
                 <a href="#" onclick="logout();return false;">LogOut</a>
             </div>
         </section>
