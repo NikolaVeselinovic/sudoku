@@ -10,10 +10,7 @@ if (!empty($_POST)) {
         $email = trim($_POST['email']);
         $name = trim($_POST['name']);
         $lastname = trim($_POST['lastname']);
-
-
-
-
+        
         if ((!empty($user_name)) && (!empty($password)) && (!empty($email)) && (!empty($name)) && (!empty($lastname))) {
             $data = array("email" => $email, "password" => $password_hash, "name" => $name, "user_name" => $user_name, "lastname" => $lastname);
             $data_string = json_encode($data);
@@ -40,14 +37,6 @@ if (!empty($_POST)) {
             } else {
                 $invalid = 1;
             }
-            // if ($db->addUser($firstname, $lastname, $email, $password_hash)) {
-            //     $lastId=$db->dblink->insert_id;
-            //     $user = new User($lastId, $firstname, $lastname, $email, $password);
-            //     $_SESSION['user'] = $user;
-            //     header("Location:home.php");
-            // } else {
-            //     echo 'User is not entered in database!';
-            // }
         }
     }
 }
@@ -80,7 +69,7 @@ if (!empty($_POST)) {
                 <input type="text" name="email" placeholder="E-mail" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <?php if ($invalid == 1) { ?>
-                    <p class="warning">Username or password already exists!</p>
+                    <p class="warning">Username or email already exists!</p>
                 <?php } ?>
                 <button type="submit" action="">Sign Up</button>
                 <p>By clicking Sing Up you agree to our<a href="#"> Terms Data Policy</a> and<a href="#"> Cookie Policy.</a> You may receive SMS notifications from us and can opt out at any time.</p>

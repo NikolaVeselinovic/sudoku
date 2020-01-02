@@ -118,4 +118,41 @@ Flight::route('DELETE /user/@username', function($username){
 });
 
 
+Flight::route('POST /edit-profile', function () {
+    header("Content-Type: application/json; charset=utf-8");
+    $db = Flight::db();
+    $podaci_json = Flight::get("json_podaci");
+    $podaci = json_decode($podaci_json);
+    if ($podaci == null) {
+        $odgovor["message"] = "Empty";
+        $json_odgovor = json_encode($odgovor);
+        echo $json_odgovor;
+        return false;
+    } else {
+        if (
+            !property_exists($podaci, 'email') || !property_exists($podaci, 'password') || !property_exists($podaci, 'user_name')
+            || !property_exists($podaci, 'name') || !property_exists($podaci, 'lastname') || !property_exists($podaci, 'id')
+        ) {
+            $odgovor["message"] = "Incorect data.";
+            $json_odgovor = json_encode($odgovor, JSON_UNESCAPED_UNICODE);
+            echo $json_odgovor;
+            return false;
+        } else {
+            if ($db->editUser($podaci->id, $podaci->user_name, $podaci->email, $podaci->password, $podaci->name, $podaci->lastname)) {
+                if ($db->result->num_rows > 0) {
+                    $odgovor = $db->result->fetch_object();
+                }else{
+                    $odgovor["message"] = "Error";
+                }
+                
+            } else {
+                $odgovor["message"] = "Error";
+            }
+            $json_odgovor = json_encode($odgovor, JSON_UNESCAPED_UNICODE);
+            echo $json_odgovor;
+            return false;
+        }
+    }
+});
+
 Flight::start();
