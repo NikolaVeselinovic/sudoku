@@ -106,3 +106,8 @@ footer a { font-size: 1.9em; }
 .welcome .main-menu em { color:rgb(102, 60, 117); font-weight: 900; font-variant: small-caps;}
 .welcome .main-menu p { letter-spacing: 0.084em; font-weight: 700; font-size: 3.8em; text-transform: uppercase; } 
 /*---------------------------*/
+
+/*Rank*/
+.welcome .rank .column em:nth-last-child(2) { width: 8rem;}
+.welcome .rank .column em:last-child { width: 1rem; line-height: 0; }
+.welcome .rank em i:hover { color: #d3d4d6; }
