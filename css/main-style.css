@@ -54,7 +54,7 @@ footer a { font-size: 1.9em; }
 .welcome a { color: rgb(102, 60, 117); font-weight: 900; }
 .welcome form, .welcome .signup, .welcome .allusers, .welcome .rank { display: flex; flex-flow: column wrap; justify-content: center; align-items: center; margin: auto 1em; max-width: 400px; width: 100%; max-height: 500px; padding: 2em; border-radius: 1em; background-color: rgba(214, 242, 254,0.4); }
 .welcome form em,.welcome .signup em, .welcome .allusers h5, .welcome .rank h5 { letter-spacing: 0.084em; font-weight: 700; font-size: 3.8em; color: rgb(102, 60, 117); text-transform: uppercase; }
-.welcome form input, .welcome form button,.wlcome.signup button { position: relative; display: block; padding: 0.8em 2.2em; border-radius: 10em; margin: 1.5em 0; width: 100%; color: #103c5b;}
+.welcome form input, .welcome form button,.welcome .signup button { position: relative; display: block; padding: 0.8em 2.2em; border-radius: 10em; margin: 1.5em 0; width: 100%; color: #103c5b;}
 /*---------------------  */
 
 
@@ -83,12 +83,14 @@ footer a { font-size: 1.9em; }
 .welcome .allusers ul .row:hover, .welcome .rank ul .row:hover{ background-color: transparent; color:rgb(102, 60, 117); }
 .welcome .allusers ul li:first-child, .welcome .rank ul li:first-child{ border-radius: 15px 15px 0 0; color: #103c56; font-weight: bold; text-transform: uppercase; font-size: 1.3em; background-image: linear-gradient(to bottom, rgba(102, 60, 117,0.5), rgba(60, 92, 117, 0.5)); }
 .welcome .allusers ul li:last-child, .welcome .rank ul li:last-child { border-radius: 0 0 15px 15px; } 
-.welcome .allusers ul .row, .welcome .rank ul .row { background-color: rgba(60, 92, 117, 0.5); font-weight: 600;}
+.welcome .allusers ul .row, .welcome .rank ul .row, .welcome .allusers ul, .welcome .allusers .search  { background-color: rgba(60, 92, 117, 0.5); font-weight: 600;}
 .welcome .allusers em, .welcome .rank em { display: inline-block; width: 12rem; text-align: center; }
 .welcome .allusers em:first-child, .welcome .rank  em:first-child { width: 3rem; }
 .welcome .allusers em:last-child, .welcome .rank em:last-child { width: 6rem; }
 .welcome .allusers .icons { display: inline-block; visibility: hidden; }
-.welcome .allusers .icons i:hover { cursor: pointer;  color: #103c56;}
+.welcome .allusers .icons i:hover { cursor: pointer;  color: #103c56; }
+.welcome .allusers .form { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; display: inline; background-color: transparent;}
+.welcome .allusers .form input{ position: relative; display: block; padding: 0.4em 2.2em;  margin: 0; width: 100%; color: #103c5b;}
 /*---------------------  */
 
 
