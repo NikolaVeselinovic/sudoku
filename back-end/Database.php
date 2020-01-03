@@ -84,9 +84,18 @@ class Database
         }
     }
    
-    // function getAllScores(){
-    //     $query = "SELECT `result.id`, `result.user_id`, `result.timeInSeconds`, `result.date`, `user.user_name`, `user.name`, `user.lastname` FROM `result as result` INNER JOIN `user as user` ON 'user.id'='result.user_id' LIMIT 0, 25";
-    //     var_dump($query);
+    function getAllScores(){
+        $query = "SELECT `user`.`id`, `user`.`user_name`, `user`.`name`, `user`.`lastname`, `r`.`id`, `r`.`user_id`, `r`.`timeInSeconds` FROM `result` `r` INNER JOIN (SELECT `result`.`user_id`, MIN(`result`.`timeInSeconds`) AS `score` FROM `result` GROUP BY `result`.`user_id`) `grouped` ON `r`.`user_id` = `grouped`.`user_id` AND `r`.`timeInSeconds` = `grouped`.`score` INNER JOIN `user` ON `user`.`id`=`r`.`user_id` ORDER BY `r`.`timeInSeconds` ASC ";
+        // var_dump($query);
+        if ($this->result = $this->dblink->query($query)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    // function getAllScoresDESC(){
+    //     $query = "SELECT `user`.`id`, `user`.`user_name`, `user`.`name`, `user`.`lastname`, `r`.`id`, `r`.`user_id`, `r`.`timeInSeconds` FROM `result` `r` INNER JOIN (SELECT `result`.`user_id`, MIN(`result`.`timeInSeconds`) AS `score` FROM `result` GROUP BY `result`.`user_id`) `grouped` ON `r`.`user_id` = `grouped`.`user_id` AND `r`.`timeInSeconds` = `grouped`.`score` INNER JOIN `user` ON `user`.`id`=`r`.`user_id` ORDER BY `r`.`timeInSeconds` DESC ";
+    //     // var_dump($query);
     //     if ($this->result = $this->dblink->query($query)) {
     //         return true;
     //     } else {
