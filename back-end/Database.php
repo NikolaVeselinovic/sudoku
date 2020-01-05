@@ -66,8 +66,9 @@ class Database
             return false;
         }
     }
-    function getAllUsers(){
-        $query = "SELECT `id`, `user_name`, `password`, `email`, `name`, `lastname`, `isAdmin` FROM `user`";
+    function getAllUsers($username, $name, $lastname){
+        $query = "SELECT `id`, `user_name`, `password`, `email`, `name`, `lastname`, `isAdmin` FROM `user`
+         WHERE  `user_name` LIKE '%".$username."%'  AND `name` LIKE '%".$name."%'  AND `lastname` LIKE '%".$lastname."%'";
         if ($this->result = $this->dblink->query($query)) {
             return true;
         } else {

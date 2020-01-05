@@ -26,9 +26,9 @@ function editUser(id) {
   window.location.href = "edit-profile.php?id=" + id;
 }
 
-function getAllUsers(id) {
+function getAllUsers(id, username, name, lastname) {
   $.ajax({
-    url: "http://localhost/sudoku/back-end/users",
+    url: "http://localhost/sudoku/back-end/users?username=" + username + "&name=" + name + "&lastname="+ lastname,
     type: 'GET',
     success: function (result) {
       result.forEach((element, i) => {
@@ -56,8 +56,9 @@ function getAllUsers(id) {
     }
   });
 }
-
-
+$('#username').on('change keyup paste',function() {
+  alert("Key up detected");
+ });
 // /*Sort ranking list ASC*/
 // function sortASC() {
 //   // console.log("http://localhost/sudoku/back-end/users?user_name="+user_name+"&name="+name+"&lastname="+lastname);

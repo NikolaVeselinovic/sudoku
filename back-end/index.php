@@ -82,8 +82,26 @@ Flight::route('POST /login', function () {
 Flight::route('GET /users', function () {
     header("Content-Type: application/json; charset=utf-8");
     $db = Flight::db();
-
-        if ($db->getAllUsers()) {
+    if(isset($_GET['username'])){
+        $username = $_GET['username'];
+    }else{
+        $username = "";
+    }
+    if(isset($_GET['name'])){
+        $name = $_GET['name'];
+    }else{
+        $name = "";
+    }
+    if(isset($_GET['lastname'])){
+        $lastname = $_GET['lastname'];
+    }else{
+        $lastname = "";
+    }
+    // $json_odgovor = json_encode($username."/".$name."/".$lastname, JSON_UNESCAPED_UNICODE);
+    // echo $json_odgovor;
+    // return false;
+        if ($odgovor = $db->getAllUsers($username, $name, $lastname)) {
+           // var_dump($odg);
             if ($db->result->num_rows > 0) {
                 $odgovor = [];
                 while($row = $db->result->fetch_object()){

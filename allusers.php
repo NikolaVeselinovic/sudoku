@@ -56,7 +56,7 @@ $result_json = json_decode($result);
                     <li class="search">
                         <form autocomplete="off" action="" name="search" class="form">
                             <em></em>
-                            <em><input type="text" name="username" placeholder="Username"></em>
+                            <em><input id="username" type="text" name="username" placeholder="Username"></em>
                             <em><input type="text" name="name" placeholder="Name"></em>
                             <em> <input type="text" name="lastname" placeholder="Lastname"></em>
                             <em></em>
