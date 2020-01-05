@@ -55,6 +55,9 @@ footer .footer-content { width: 30%; display: flex; justify-content: space-betwe
 .welcome form, .welcome .signup, .welcome .allusers, .welcome .rank { display: flex; flex-flow: column wrap; justify-content: center; align-items: center; margin: auto 1em; max-width: 400px; width: 100%; max-height: 500px; padding: 2em; border-radius: 1em; background-color: rgba(214, 242, 254,0.4); }
 .welcome form em,.welcome .signup em, .welcome .allusers h5, .welcome .rank h5 { letter-spacing: 0.084em; font-weight: 700; font-size: 3.8em; color: rgb(102, 60, 117); text-transform: uppercase; }
 .welcome form input, .welcome form button,.welcome .signup button { position: relative; display: block; padding: 0.8em 2.2em; border-radius: 10em; margin: 1.5em 0; width: 100%; color: #103c5b;}
+.welcome a i { font-size: 0.8em; transform: translateX(-16px) translateY(-7px);}
+.welcome a i:hover {color: rgba(28, 125, 174, 1); }
+
 /*---------------------  */
 
 
@@ -89,8 +92,10 @@ footer .footer-content { width: 30%; display: flex; justify-content: space-betwe
 .welcome .allusers em:last-child, .welcome .rank em:last-child { width: 6rem; }
 .welcome .allusers .icons { display: inline-block; visibility: hidden; }
 .welcome .allusers .icons i:hover { cursor: pointer;  color: #103c56; }
-.welcome .allusers .form { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; display: inline; background-color: transparent;}
-.welcome .allusers .form input{ position: relative; display: block; padding: 0.4em 2.2em;  margin: 0; width: 100%; color: #103c5b; }
+.welcome .allusers .form { display: flex; flex-flow: row; margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; background-color: transparent; margin: 0 auto; padding-bottom:0.5em;}
+.welcome .allusers .form input{ position: relative; display: block; padding: 0.4em 2.2em;  margin: 0; width: 100%; color: #103c5b; max-width: 230px;}
+.welcome .allusers .form label { margin-right: 0.5em;}
+.welcome .allusers .form i { color: #9a9a9a; z-index: 10; transform: translateX(26px);}
 /*---------------------  */
 
 
@@ -110,6 +115,10 @@ footer .footer-content { width: 30%; display: flex; justify-content: space-betwe
 /*---------------------------*/
 
 /*Rank*/
-.welcome .rank .column em:nth-last-child(2) { width: 8rem;}
-.welcome .rank .column em:last-child { width: 1rem; line-height: 0; }
-.welcome .rank em i:hover { color: #d3d4d6; }
+.welcome .rank li em:last-child { width: 8rem;}
+.welcome .rank .column em:nth-last-child(2) { width: 7rem;}
+.welcome .rank li em:last-child { width: 0rem;}
+.welcome .rank .column em:last-child { width: 1rem; line-height: 0; padding-right: 1em; transform: translateX(-13px) translateY(4px);}
+.welcome .rank .column .icons i { line-height: 0; height: 10px;}
+
+.welcome .rank .column .icons i:hover { color: rgb(237, 241, 247) !important; }

@@ -82,22 +82,12 @@ Flight::route('POST /login', function () {
 Flight::route('GET /users', function () {
     header("Content-Type: application/json; charset=utf-8");
     $db = Flight::db();
-    if(isset($_GET['username'])){
-        $username = $_GET['username'];
+    if(isset($_GET['key'])){
+        $key = $_GET['key'];
     }else{
-        $username = "";
+        $key = "";
     }
-    if(isset($_GET['name'])){
-        $name = $_GET['name'];
-    }else{
-        $name = "";
-    }
-    if(isset($_GET['lastname'])){
-        $lastname = $_GET['lastname'];
-    }else{
-        $lastname = "";
-    }
-        if ($db->getAllUsers($username, $name, $lastname)) {
+        if ($db->getAllUsers($key)) {
             if ($db->result->num_rows > 0) {
                 $odgovor = [];
                 while($row = $db->result->fetch_object()){
@@ -115,8 +105,14 @@ Flight::route('GET /users', function () {
 
 Flight::route('GET /results', function(){
 	header ("Content-Type: application/json; charset=utf-8");
-	$db = Flight::db();
-    if ($db->getAllScores()) {
+    $db = Flight::db();
+    $desc = 0;
+    if(isset($_GET['desc'])){
+        if($_GET['desc']==1){
+            $desc = 1;
+        }
+    }
+    if ($db->getAllScores($desc)) {
         if ($db->result->num_rows > 0) {
             $odgovor = [];
             while($row = $db->result->fetch_object()){

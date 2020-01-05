@@ -3,18 +3,18 @@ include "back-end/user.php";
 session_start();
 if (!isset($_SESSION['user'])) {
     header("Location: login.php");
-}else{
+} else {
     $user = $_SESSION['user'];
 }
 $invalid = 0;
 $valid = 0;
 
-if(!empty($_GET)){
-    if(isset($_GET['u'])){
-        $valid=$_GET['u'];
+if (!empty($_GET)) {
+    if (isset($_GET['u'])) {
+        $valid = $_GET['u'];
     }
-    if(isset($_GET['id'])){
-        $ch = curl_init('http://localhost/sudoku/back-end/user/'.$_GET['id']);
+    if (isset($_GET['id'])) {
+        $ch = curl_init('http://localhost/sudoku/back-end/user/' . $_GET['id']);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = curl_exec($ch);
         $user = json_decode($result);
@@ -31,7 +31,7 @@ if (!empty($_POST)) {
         $lastname = trim($_POST['lastname']);
 
         if ((!empty($user_name)) && (!empty($password)) && (!empty($email)) && (!empty($name)) && (!empty($lastname))) {
-            $data = array("id" => $_POST['id'],"email" => $email, "password" => $password_hash, "name" => $name, "user_name" => $user_name, "lastname" => $lastname);
+            $data = array("id" => $_POST['id'], "email" => $email, "password" => $password_hash, "name" => $name, "user_name" => $user_name, "lastname" => $lastname);
             $data_string = json_encode($data);
             $ch = curl_init('http://localhost/sudoku/back-end/edit-profile');
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
@@ -49,10 +49,10 @@ if (!empty($_POST)) {
             $result_json = json_decode($result);
             if (property_exists($result_json, 'id')) {
                 $user = new User($result_json->id, $result_json->user_name, $result_json->password, $result_json->email, $result_json->name, $result_json->lastname, $result_json->isAdmin);
-                if($_SESSION['user']->id == $user->id){
+                if ($_SESSION['user']->id == $user->id) {
                     $_SESSION['user'] = $user;
                 }
-                header("Location: edit-profile.php?u=1&id=".$user->id);
+                header("Location: edit-profile.php?u=1&id=" . $user->id);
             } else {
                 $invalid = 1;
             }
@@ -63,7 +63,7 @@ $hash = $user->password;
 $hash_type = "md5";
 $email = "nikolaveselinovic388@gmail.com";
 $code = "f2ce482aab6c1b95";
-$url = "https://md5decrypt.net/en/Api/api.php?hash=".$hash."&hash_type=".$hash_type."&email=".$email."&code=".$code;
+$url = "https://md5decrypt.net/en/Api/api.php?hash=" . $hash . "&hash_type=" . $hash_type . "&email=" . $email . "&code=" . $code;
 $context = stream_context_create(
     array(
         "http" => array(
@@ -88,23 +88,22 @@ $password = file_get_contents($url, false, $context);
     <link rel="stylesheet" type="text/css" href="css/main-style.css">
     <link rel="stylesheet" type="text/css" href="css/style-responsive.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( document ).tooltip();
-  } );
-  </script>
-
+    <script>(function() {
+            var css = document.createElement('link');
+            css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css';
+            css.rel = 'stylesheet';
+            css.type = 'text/css';
+            document.getElementsByTagName('head')[0].appendChild(css);
+        })();
+    </script>
     <title>Sudoku - Edit profile</title>
 </head>
 
 <body>
     <main>
         <section class="welcome">
-        <form action="" method="post" class="signup edit">
-                <em>Edit profile</em>
+            <form action="" method="post" class="signup edit">
+                <em><a href="menu.php"><i class="fas fa-chevron-left"></i></a>Edit profile</em>
                 <input type="hidden" name="id" placeholder="id" value="<?php echo $user->id; ?>">
                 <input type="text" title="Type your name here" name="name" placeholder="Name" value="<?php echo $user->name; ?>" required>
                 <input type="text" title="Type your lastname here" name="lastname" placeholder="Last name" value="<?php echo $user->lastname; ?>" required>
@@ -118,12 +117,13 @@ $password = file_get_contents($url, false, $context);
                     <p class="warning good">User successfully updated!</p>
                 <?php } ?>
                 <button type="submit" action="">Save</button>
-                <a href="menu.php">Back to Menu</a>
+                <!-- <a href="menu.php">Back to Menu</a> -->
             </form>
         </section>
     </main>
 </body>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-	<script src="js/script.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+
 </html>

@@ -24,28 +24,14 @@ $result_json = json_decode($result);
     <script type="text/javascript">
         $(document).ready(function() {
             getAllUsers('<?php echo $_SESSION['user']->id; ?>', '', '', '');
-                    
-            $('#username').on('input', function(e) {
-                setTimeout( function(){
-                    getAllUsers('<?php echo $_SESSION['user']->id; ?>', $('#username').val(), $('#name').val(), $('#lastname').val());
-                },500);
-            });
-            $('#name').on('input', function(e) {
-                setTimeout( function(){
-                    getAllUsers('<?php echo $_SESSION['user']->id; ?>', $('#username').val(), $('#name').val(), $('#lastname').val());
-                },2000);
-            });
-            $('#lastname').on('input', function(e) {
-                setTimeout( function(){
-                    getAllUsers('<?php echo $_SESSION['user']->id; ?>', $('#username').val(), $('#name').val(), $('#lastname').val());
-                },2000);
+
+            $('#search').on('input', function(e) {
+                setTimeout(function() {
+                    getAllUsers('<?php echo $_SESSION['user']->id; ?>', $('#search').val());
+                }, 500);
             });
 
         });
-
-        // $( "input" ).html('milos');
-
-
         (function() {
             var css = document.createElement('link');
             css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css';
@@ -63,7 +49,7 @@ $result_json = json_decode($result);
     <main>
         <section class="welcome">
             <div class="allusers">
-                <h5>All users</h5>
+                <h5><a href="menu.php"><i class="fas fa-chevron-left"></i></a>All users</h5>
                 <ul>
                     <li>
                         <em>&#8470;</em>
@@ -72,32 +58,14 @@ $result_json = json_decode($result);
                         <em>Lastname</em>
                         <em></em>
                     </li>
+                    
                     <li class="search">
                         <form autocomplete="off" action="" name="search" class="form">
-                            <em></em>
-                            <em><input id="username" type="text" name="username" placeholder="Username"></em>
-                            <em><input id="name" type="text" name="name" placeholder="Name"></em>
-                            <em> <input id="lastname" type="text" name="lastname" placeholder="Lastname"></em>
-                            <em></em>
+                            <label>Search: </label>
+                            <i class="fas fa-search"></i>
+                            <input id="search" type="text" name="search" placeholder="Keyword">
                         </form>
                     </li>
-
-                    <?php
-                    /* foreach ($result_json as $key => $user) { ?>
-                        <li class="row">
-
-                            <em><?php echo $key + 1; ?></em>
-                            <em><?php echo $user->user_name; ?></em>
-                            <em><?php echo $user->name; ?></em>
-                            <em><?php echo $user->lastname; ?></em>
-                            <em class="icons">
-                                <?php if ($user->user_name != $_SESSION['user']->user_name) { ?>
-                                    <i class="fas fa-trash-alt" onclick="deleteUser('<?php echo $user->user_name; ?>')"></i>
-                                <?php } ?>
-                                <i class="fas fa-pencil-alt" onclick="editUser('<?php echo $user->id; ?>')"></i>
-                            </em>
-                        </li>
-                                <?php }*/ ?>
                 </ul>
             </div>
         </section>

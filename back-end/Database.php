@@ -66,9 +66,9 @@ class Database
             return false;
         }
     }
-    function getAllUsers($username, $name, $lastname){
+    function getAllUsers($key){
         $query = "SELECT `id`, `user_name`, `password`, `email`, `name`, `lastname`, `isAdmin` FROM `user`
-         WHERE  `user_name` LIKE '%".$username."%'  AND `name` LIKE '%".$name."%'  AND `lastname` LIKE '%".$lastname."%'";
+         WHERE  `user_name` LIKE '%".$key."%'  OR `name` LIKE '%".$key."%'  OR `lastname` LIKE '%".$key."%'";
         if ($this->result = $this->dblink->query($query)) {
             return true;
         } else {
@@ -85,24 +85,22 @@ class Database
         }
     }
    
-    function getAllScores(){
-        $query = "SELECT `user`.`id`, `user`.`user_name`, `user`.`name`, `user`.`lastname`, `r`.`id`, `r`.`user_id`, `r`.`timeInSeconds` FROM `result` `r` INNER JOIN (SELECT `result`.`user_id`, MIN(`result`.`timeInSeconds`) AS `score` FROM `result` GROUP BY `result`.`user_id`) `grouped` ON `r`.`user_id` = `grouped`.`user_id` AND `r`.`timeInSeconds` = `grouped`.`score` INNER JOIN `user` ON `user`.`id`=`r`.`user_id` ORDER BY `r`.`timeInSeconds` ASC ";
-        // var_dump($query);
+    function getAllScores($desc){
+        if($desc == 1){
+            $query = "SELECT `user`.`id`, `user`.`user_name`, `user`.`name`, `user`.`lastname`, `r`.`id`, `r`.`user_id`, `r`.`timeInSeconds` FROM `result` `r` INNER JOIN (SELECT `result`.`user_id`, MIN(`result`.`timeInSeconds`)
+             AS `score` FROM `result` GROUP BY `result`.`user_id`) `grouped` ON `r`.`user_id` = `grouped`.`user_id` AND `r`.`timeInSeconds` = `grouped`.`score` INNER JOIN `user` ON `user`.`id`=`r`.`user_id` 
+             ORDER BY `r`.`timeInSeconds` DESC ";
+        }else {
+            $query = "SELECT `user`.`id`, `user`.`user_name`, `user`.`name`, `user`.`lastname`, `r`.`id`, `r`.`user_id`, `r`.`timeInSeconds` FROM `result` `r` INNER JOIN (SELECT `result`.`user_id`, MIN(`result`.`timeInSeconds`)
+            AS `score` FROM `result` GROUP BY `result`.`user_id`) `grouped` ON `r`.`user_id` = `grouped`.`user_id` AND `r`.`timeInSeconds` = `grouped`.`score` INNER JOIN `user` ON `user`.`id`=`r`.`user_id` 
+            ORDER BY `r`.`timeInSeconds` ASC ";
+        }
         if ($this->result = $this->dblink->query($query)) {
             return true;
         } else {
             return false;
         }
     }
-    // function getAllScoresDESC(){
-    //     $query = "SELECT `user`.`id`, `user`.`user_name`, `user`.`name`, `user`.`lastname`, `r`.`id`, `r`.`user_id`, `r`.`timeInSeconds` FROM `result` `r` INNER JOIN (SELECT `result`.`user_id`, MIN(`result`.`timeInSeconds`) AS `score` FROM `result` GROUP BY `result`.`user_id`) `grouped` ON `r`.`user_id` = `grouped`.`user_id` AND `r`.`timeInSeconds` = `grouped`.`score` INNER JOIN `user` ON `user`.`id`=`r`.`user_id` ORDER BY `r`.`timeInSeconds` DESC ";
-    //     // var_dump($query);
-    //     if ($this->result = $this->dblink->query($query)) {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // }
 
     
 }
