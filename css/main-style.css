@@ -90,7 +90,7 @@ footer .footer-content { width: 30%; display: flex; justify-content: space-betwe
 .welcome .allusers .icons { display: inline-block; visibility: hidden; }
 .welcome .allusers .icons i:hover { cursor: pointer;  color: #103c56; }
 .welcome .allusers .form { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; display: inline; background-color: transparent;}
-.welcome .allusers .form input{ position: relative; display: block; padding: 0.4em 2.2em;  margin: 0; width: 100%; color: #103c5b;}
+.welcome .allusers .form input{ position: relative; display: block; padding: 0.4em 2.2em;  margin: 0; width: 100%; color: #103c5b; }
 /*---------------------  */
 
 

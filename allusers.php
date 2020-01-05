@@ -22,10 +22,29 @@ $result_json = json_decode($result);
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
     <script type="text/javascript">
-    
-         $(document).ready(function(){
-            getAllUsers('<?php echo $_SESSION['user']->id;?>', '', '', '');
+        $(document).ready(function() {
+            getAllUsers('<?php echo $_SESSION['user']->id; ?>', '', '', '');
+                    
+            $('#username').on('input', function(e) {
+                setTimeout( function(){
+                    getAllUsers('<?php echo $_SESSION['user']->id; ?>', $('#username').val(), $('#name').val(), $('#lastname').val());
+                },500);
+            });
+            $('#name').on('input', function(e) {
+                setTimeout( function(){
+                    getAllUsers('<?php echo $_SESSION['user']->id; ?>', $('#username').val(), $('#name').val(), $('#lastname').val());
+                },2000);
+            });
+            $('#lastname').on('input', function(e) {
+                setTimeout( function(){
+                    getAllUsers('<?php echo $_SESSION['user']->id; ?>', $('#username').val(), $('#name').val(), $('#lastname').val());
+                },2000);
+            });
+
         });
+
+        // $( "input" ).html('milos');
+
 
         (function() {
             var css = document.createElement('link');
@@ -57,8 +76,8 @@ $result_json = json_decode($result);
                         <form autocomplete="off" action="" name="search" class="form">
                             <em></em>
                             <em><input id="username" type="text" name="username" placeholder="Username"></em>
-                            <em><input type="text" name="name" placeholder="Name"></em>
-                            <em> <input type="text" name="lastname" placeholder="Lastname"></em>
+                            <em><input id="name" type="text" name="name" placeholder="Name"></em>
+                            <em> <input id="lastname" type="text" name="lastname" placeholder="Lastname"></em>
                             <em></em>
                         </form>
                     </li>

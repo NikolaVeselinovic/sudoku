@@ -97,11 +97,7 @@ Flight::route('GET /users', function () {
     }else{
         $lastname = "";
     }
-    // $json_odgovor = json_encode($username."/".$name."/".$lastname, JSON_UNESCAPED_UNICODE);
-    // echo $json_odgovor;
-    // return false;
-        if ($odgovor = $db->getAllUsers($username, $name, $lastname)) {
-           // var_dump($odg);
+        if ($db->getAllUsers($username, $name, $lastname)) {
             if ($db->result->num_rows > 0) {
                 $odgovor = [];
                 while($row = $db->result->fetch_object()){
