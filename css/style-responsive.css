@@ -1,24 +1,13 @@
 @media all and (max-width:1460px){
 	main.sudoku-grid .img-holder{width: 20%;}
 }
-@media all and (max-height:850px){
-	main.sudoku-grid .table #sudoku td{font-size: 1.3em;}
-	main.sudoku-grid .tbl-holder{min-width: 520px;}
-}
 @media all and (max-width: 1130px){
 	main.sudoku-grid .table #sudoku td{font-size: 1.3em;}
 	main.sudoku-grid .tbl-holder{min-width: 520px;}
-
 }
-@media all and (max-width: 870px){
-	main.sudoku-grid .img-holder{display: none;}
-	.p{font-size: 0.8em;}
-
-}
-@media all and (max-width:620px){
-	.on{font-size: 0.8em;}
-	.check{font-size: 0.8em;}
-	main.sudoku-grid .on.paus img{width:80%; height: auto;}
+@media all and (max-height:850px){
+	main.sudoku-grid .table #sudoku td{font-size: 1.3em;}
+	main.sudoku-grid .tbl-holder {box-shadow: 0px 0px 300px 80px rgba(188,233,254,0);}
 }
 @media all and (max-height:750px){
 	.on{font-size: 0.8em;}
@@ -31,6 +20,11 @@
 	footer .stopwatch{ font-size: 1.3em; }
 	main.sudoku-grid .table #sudoku td{font-size: 1.1em;}
 }
+@media all and (max-width:620px){
+	.on{font-size: 0.8em;}
+	.check{font-size: 0.8em;}
+	main.sudoku-grid .on.paus img{width:80%; height: auto;}
+}
 @media all and (max-height:620px){
 	header a{ font-size: 1.1em; }
 	footer a{ font-size: 1.1em; }
@@ -41,8 +35,8 @@
 	main.sudoku-grid .on.paus img{width:80%; height: auto;}
 	main.sudoku-grid .button-title{top:-46%;}
 }
-
 @media all and (max-width:550px){
+	footer .footer-content { width: 60%; }
 	header a{ font-size: 1.1em; }
 	footer a{ font-size: 1.1em; }
 	footer .stopwatch{ font-size: 1.1em; }
@@ -51,17 +45,16 @@
 	.on{font-size: 0.6em;}
 	.check{font-size: 0.6em;}
 	main.sudoku-grid .on.paus img{width:80%; height: auto;}
+	main.sudoku-grid .on .button-title a {letter-spacing: 8px;}
 }
 @media all and (max-width:420px){
 	.welcome form { background-color: rgba(214, 242, 254,0.6); }
 	.welcome .signup em { font-size: 2.6em;}
 }
-
 @media all and (max-width:380px){
 	main.sudoku-grid .table #sudoku td{font-size: 0.7em;}
 	main.sudoku-grid .tbl-holder{min-width: 282px;}
 }
 @media all and (max-width:334px){
     .welcome .signup p { font-size: 0.6em; }
-    
 }

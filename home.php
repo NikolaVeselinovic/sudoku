@@ -1,9 +1,9 @@
 <?php
-	include "back-end/user.php";
-	session_start();
-	if (!isset($_SESSION['user'])) {
-		header("Location: login.php");
-	}
+include "back-end/user.php";
+session_start();
+if (!isset($_SESSION['user'])) {
+	header("Location: login.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,7 +18,7 @@
 	<title>Sudoku</title>
 </head>
 
-<body>
+<body class="home-sudoku">
 	<header>
 		<div class="menu">
 			<a href="#" class="newgame">New Game</a>
@@ -61,20 +61,16 @@
 			</div>
 		</div>
 		<div class="table">
-			<div class="img-holder">
-				<img src="img/eraser.png">
-			</div>
 			<div class="tbl-holder">
 				<table id="sudoku"></table>
-			</div>
-			<div class="img-holder">
-				<img src="img/pen.png">
 			</div>
 		</div>
 	</main>
 	<footer>
-		<div class="stopwatch"></div>
-		<a href="#" id="check">Check</a>
+		<div class="footer-content">
+			<div class="stopwatch"></div>
+			<a href="#" id="check">Check</a>
+		</div>
 	</footer>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/local.js"></script>

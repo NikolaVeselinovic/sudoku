@@ -29,7 +29,7 @@ if (!isset($_SESSION['user'])) {
                 <p>Menu</p>
                 <em>Hi <?php echo $_SESSION['user']->name . ' ' .  $_SESSION['user']->lastname ?>!</em>
                 <a href="home.php">New Game</a>
-                <a href="#">Ranking List</a>
+                <a href="rank.php">Ranking List</a>
                 <a href="edit-profile.php">Edit Profile</a>
                 <?php if($_SESSION['user']->isAdmin){ ?>
                     <a href="allusers.php">All Users</a>

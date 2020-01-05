@@ -87,6 +87,15 @@ $password = file_get_contents($url, false, $context);
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/main-style.css">
     <link rel="stylesheet" type="text/css" href="css/style-responsive.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( document ).tooltip();
+  } );
+  </script>
 
     <title>Sudoku - Edit profile</title>
 </head>
@@ -97,10 +106,10 @@ $password = file_get_contents($url, false, $context);
         <form action="" method="post" class="signup edit">
                 <em>Edit profile</em>
                 <input type="hidden" name="id" placeholder="id" value="<?php echo $user->id; ?>">
-                <input type="text" name="name" placeholder="Name" value="<?php echo $user->name; ?>" required>
-                <input type="text" name="lastname" placeholder="Last name" value="<?php echo $user->lastname; ?>" required>
-                <input type="text" name="user_name" placeholder="Username" value="<?php echo $user->user_name; ?>" required>
-                <input type="text" name="email" placeholder="E-mail" value="<?php echo $user->email; ?>" required>
+                <input type="text" title="Type your name here" name="name" placeholder="Name" value="<?php echo $user->name; ?>" required>
+                <input type="text" title="Type your lastname here" name="lastname" placeholder="Last name" value="<?php echo $user->lastname; ?>" required>
+                <input type="text" title="Type your username here" name="user_name" placeholder="Username" value="<?php echo $user->user_name; ?>" required>
+                <input type="text" title="Type your email here" name="email" placeholder="E-mail" value="<?php echo $user->email; ?>" required>
                 <input type="password" name="password" placeholder="Password" value="<?php echo $password; ?>" required>
                 <?php if ($invalid == 1) { ?>
                     <p class="warning">Username or email already exists!</p>
