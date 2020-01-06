@@ -53,6 +53,7 @@ if (!empty($_POST)) {
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/main-style.css">
     <link rel="stylesheet" type="text/css" href="css/style-responsive.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
 
     <title>Sudoku - Login</title>
 </head>

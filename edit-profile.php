@@ -88,6 +88,7 @@ $password = file_get_contents($url, false, $context);
     <link rel="stylesheet" type="text/css" href="css/main-style.css">
     <link rel="stylesheet" type="text/css" href="css/style-responsive.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     <script>(function() {
             var css = document.createElement('link');
             css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css';

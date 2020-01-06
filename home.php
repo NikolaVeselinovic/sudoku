@@ -13,7 +13,8 @@ if (!isset($_SESSION['user'])) {
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/main-style.css">
 	<link rel="stylesheet" type="text/css" href="css/style-responsive.css">
-	<link rel="stylesheet" type="text/css" href="fonts/font-style.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-style.css">		
+	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sudoku</title>
 	<script>

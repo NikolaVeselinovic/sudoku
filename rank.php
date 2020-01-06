@@ -21,6 +21,7 @@ $result_json = json_decode($result);
     <link rel="stylesheet" type="text/css" href="css/main-style.css">
     <link rel="stylesheet" type="text/css" href="css/style-responsive.css">
     <link rel="stylesheet" type="text/css" href="fonts/font-style.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
     <script type="text/javascript">

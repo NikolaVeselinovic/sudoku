@@ -50,6 +50,7 @@ main.sudoku-grid .table #sudoku tr:nth-child(3n) { border-bottom: 4px solid rgba
 main.sudoku-grid .table #sudoku input { padding: 0.1em 0.8em; width:70px; color: rgb(102, 60, 117); }
 footer { display: flex; justify-content: center;  padding: 0 2em; padding-top: 2em; }
 footer .footer-content { width: 30%; display: flex; justify-content: space-between; }
+
 /*---------------------  */
 
 /*Common css for Login & Singup & Alluser & Rank */
@@ -125,3 +126,4 @@ footer .footer-content { width: 30%; display: flex; justify-content: space-betwe
 .welcome .rank .column .icons i { line-height: 0; height: 10px;}
 
 .welcome .rank .column .icons i:hover { color: rgb(237, 241, 247) !important; }
+
