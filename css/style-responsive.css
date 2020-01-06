@@ -5,9 +5,23 @@
 	main.sudoku-grid .table #sudoku td{font-size: 1.3em;}
 	main.sudoku-grid .tbl-holder{min-width: 520px;}
 }
+@media all and (max-width:920px){
+	.welcome .rank em { width: 7rem; }
+	.welcome .rank ul li.column { font-size: 0.9em; }
+
+}
 @media all and (max-height:850px){
 	main.sudoku-grid .table #sudoku td{font-size: 1.3em;}
 	main.sudoku-grid .tbl-holder {box-shadow: 0px 0px 300px 80px rgba(188,233,254,0);}
+}
+@media all and (max-width:830px){
+	.welcome .rank h5 { font-size: 2.5em; }
+	.welcome .rank ul li.column em:last-child(2) {width: 4rem;}
+}
+@media all and (max-width:820px){
+	.welcome .allusers em:last-child { visibility: visible; width: 3.5rem; } 
+	.welcome .allusers li *:not(:first-child):not(:last-child) { width: 8rem; }
+	.welcome .allusers .search i.fas.fa-search{ text-align: end;}
 }
 @media all and (max-height:750px){
 	.on{font-size: 0.8em;}
@@ -15,10 +29,13 @@
 	main.sudoku-grid .on.paus img{width:80%; height: auto;}
 }
 @media all and (max-height:700px){
-	header a{ font-size: 1.3em; }
-	footer a{ font-size: 1.3em; }
+	header a, footer a { font-size: 1.3em; }
 	footer .stopwatch{ font-size: 1.3em; }
 	main.sudoku-grid .table #sudoku td{font-size: 1.1em;}
+}
+@media all and (max-width:660px){
+	.welcome .rank h5 { font-size: 2.2em; }
+	.welcome .rank ul li.column em:last-child(2) {width: 3.5rem;}
 }
 @media all and (max-width:620px){
 	.on{font-size: 0.8em;}
@@ -26,8 +43,7 @@
 	main.sudoku-grid .on.paus img{width:80%; height: auto;}
 }
 @media all and (max-height:620px){
-	header a{ font-size: 1.1em; }
-	footer a{ font-size: 1.1em; }
+	header a, footer a{ font-size: 1.1em; }
 	footer .stopwatch{ font-size: 1.1em; }
 	main.sudoku-grid .table #sudoku td{font-size: 0.9em;}
 	.on{font-size: 0.6em;}
@@ -35,6 +51,17 @@
 	main.sudoku-grid .on.paus img{width:80%; height: auto;}
 	main.sudoku-grid .button-title{top:-46%;}
 }
+@media all and (max-width:590px){
+	.welcome .allusers h5 { font-size: 2em; }
+	.welcome .allusers ul li:first-child { font-size: 1em; }
+	.welcome .allusers li *:not(:first-child):not(:last-child) { width: 6rem; }
+	.welcome .allusers .search i.fas.fa-search{ text-align: end;}
+	.welcome .rank h5 { font-size: 2em; }
+	.welcome .rank ul { font-size: 0.8em; }
+	.welcome .rank ul .column li.column {font-size: 0.7em;}
+	
+}
+
 @media all and (max-width:550px){
 	footer .footer-content { width: 60%; }
 	header a{ font-size: 1.1em; }
@@ -44,16 +71,36 @@
 	main.sudoku-grid .tbl-holder{min-width: 360px;}
 	.on{font-size: 0.6em;}
 	.check{font-size: 0.6em;}
-	main.sudoku-grid .on.paus img{width:80%; height: auto;}
+	main.sudoku-grid .on.paus img{ width:80%; height: auto;}
 	main.sudoku-grid .on .button-title a {letter-spacing: 8px;}
+}
+@media all and (max-width:500px){
+
+	.welcome .allusers .form { width: 60%;}
+	.welcome .allusers h5 { font-size: 1.5em; }
+	.welcome .allusers ul li:first-child { font-size: 0.6em; }
+	.welcome .allusers ul li { font-size: 0.6em; }
+	.welcome .allusers li *:not(:first-child):not(:last-child) { width: 4rem; }
+	.welcome .allusers .search i.fas.fa-search{ text-align: end;}
 }
 @media all and (max-width:420px){
 	.welcome form { background-color: rgba(214, 242, 254,0.6); }
 	.welcome .signup em { font-size: 2.6em;}
+	.welcome .allusers ul li:first-child { font-size: 0.4em; }
+	.welcome .allusers ul li { font-size: 0.4em; }
+	.welcome .allusers li *:not(:first-child):not(:last-child) { width: 3rem; }
+	.welcome .allusers .search i.fas.fa-search{ text-align: end;}
+}
+@media all and (max-width:400px){
+	.welcome .allusers .form { width: 40%;}
+	.welcome .allusers .form input { padding: 0em 2em; }
 }
 @media all and (max-width:380px){
 	main.sudoku-grid .table #sudoku td{font-size: 0.7em;}
 	main.sudoku-grid .tbl-holder{min-width: 282px;}
+	.welcome .allusers .form input#search { font-size: 1.2em;}
+	.welcome .allusers li *:not(:first-child):not(:last-child) { width: 2.35rem; }
+	.welcome .allusers .search i.fas.fa-search{visibility: hidden;}
 }
 @media all and (max-width:334px){
     .welcome .signup p { font-size: 0.6em; }

@@ -93,6 +93,7 @@ footer .footer-content { width: 30%; display: flex; justify-content: space-betwe
 .welcome .allusers ul .row, .welcome .rank ul .row, .welcome .allusers ul, .welcome .allusers .search  { background-color: rgba(60, 92, 117, 0.5); font-weight: 600;}
 .welcome .allusers em, .welcome .rank em { display: inline-block; width: 12rem; text-align: center; }
 .welcome .allusers em:first-child, .welcome .rank  em:first-child { width: 3rem; }
+/* .welcome .allusers em:last-child { visibility: visible;} */
 .welcome .allusers em:last-child, .welcome .rank em:last-child { width: 6rem; }
 .welcome .allusers .icons { display: inline-block; visibility: hidden; }
 .welcome .allusers .icons i:hover { cursor: pointer;  color: #103c56; }
@@ -100,6 +101,8 @@ footer .footer-content { width: 30%; display: flex; justify-content: space-betwe
 .welcome .allusers .form input{ position: relative; display: block; padding: 0.4em 2.2em;  margin: 0; width: 100%; color: #103c5b; max-width: 230px;}
 .welcome .allusers .form label { margin-right: 0.5em;}
 .welcome .allusers .form i { color: #9a9a9a; z-index: 10; transform: translateX(26px);}
+.welcome .allusers .search i.fas.fa-search{ color: #103c5b; }
+
 /*---------------------  */
 
 

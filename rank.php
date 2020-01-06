@@ -19,7 +19,9 @@ $result_json = json_decode($result);
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/main-style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/style-responsive.css">
+    
     <link rel="stylesheet" type="text/css" href="fonts/font-style.css">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
@@ -38,7 +40,7 @@ $result_json = json_decode($result);
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>All users</title>
+    <title>Rank</title>
 </head>
 
 <body>
