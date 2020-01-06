@@ -101,6 +101,14 @@ class Database
             return false;
         }
     }
+    function saveResult($userid, $time, $date){
+        $query = "INSERT INTO `result`(`user_id`, `timeInSeconds`, `date`) VALUES ('". $userid ."','".$time."','".$date."')";
+        if ($this->dblink->query($query)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     
 }

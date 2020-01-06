@@ -127,6 +127,32 @@ Flight::route('GET /results', function(){
     return false;
 });
 
+Flight::route('POST /results', function () {
+    header("Content-Type: application/json; charset=utf-8");
+    $db = Flight::db();
+    $podaci_json = Flight::get("json_podaci");
+    $podaci = json_decode($podaci_json);
+    if ($podaci == null) {
+        $odgovor["message"] = "Empty";
+        $json_odgovor = json_encode($odgovor);
+        echo $json_odgovor;
+        return false;
+    } else {
+        if (!property_exists($podaci, 'userid') || !property_exists($podaci, 'time') || !property_exists($podaci, 'date')) {
+            $odgovor["message"] = "Incorect data.";
+            $json_odgovor = json_encode($odgovor, JSON_UNESCAPED_UNICODE);
+            echo $json_odgovor;
+            return false;
+        } else {
+            if ($db->saveResult($podaci->userid, $podaci->time, $podaci->date)) {              
+                    $odgovor["message"] = "Successfully saved result";
+            }
+            $json_odgovor = json_encode($odgovor, JSON_UNESCAPED_UNICODE);
+            echo $json_odgovor;
+            return false;
+        }
+    }
+});
 
 
 Flight::route('DELETE /user/@username', function($username){

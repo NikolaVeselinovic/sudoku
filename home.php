@@ -16,6 +16,16 @@ if (!isset($_SESSION['user'])) {
 	<link rel="stylesheet" type="text/css" href="fonts/font-style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sudoku</title>
+	<script>
+		var id = '<?php echo $_SESSION['user']->id?>';
+		(function() {
+            var css = document.createElement('link');
+            css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css';
+            css.rel = 'stylesheet';
+            css.type = 'text/css';
+            document.getElementsByTagName('head')[0].appendChild(css);
+        })();
+    </script>
 </head>
 
 <body class="home-sudoku">
@@ -49,6 +59,7 @@ if (!isset($_SESSION['user'])) {
 				<span>Your time is: <span class="stopwatch"></span> </span>
 				<a href="#" class="newgame">New Game</a>
 				<a href="#" class="restart">Restart</a>
+				<a href="menu.php">Back to Menu</a>
 			</div>
 		</div>
 		<div class="check f">
@@ -58,6 +69,8 @@ if (!isset($_SESSION['user'])) {
 				<span><a href="#" class="continue">Try Again</a></span>
 				<a href="#" class="newgame">New Game</a>
 				<a href="#" class="restart">Restart</a>
+				<a href="menu.php">Back to Menu</a>
+
 			</div>
 		</div>
 		<div class="table">

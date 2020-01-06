@@ -1,4 +1,4 @@
-
+// za zavrsen sudoku odmah zakomentarisati linije 338 i 350
 var sudokuArray = new Array(81);
 var jSudokuArray=new Array(81);
 // var emptySudoku=new Array(81);
@@ -290,7 +290,25 @@ $("#check").click(function(){
 	if(checkSudoku()==true){
 		console.log("uspesno");
 		$(".check.p").show();
+		// time = ((hours*60)+minutes)*60 + seconds;
+		date = new Date().toISOString();
+		
+		var data = {
+			userid: id,
+			time: ((hours*60)+minutes)*60 + seconds,
+			date: date.substring(0,date.indexOf('T'))
+		};
 
+        $.ajax({
+            url: 'http://localhost/sudoku/back-end/results',
+            type: 'post',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                console.log(data);
+            },
+            data: JSON.stringify(data)
+        });
 	}
 	else{
 		console.log("neuspesno");
