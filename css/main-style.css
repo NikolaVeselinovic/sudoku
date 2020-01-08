@@ -37,6 +37,7 @@ main.sudoku-grid .cover { background-color: rgba(19, 88, 123, 0.97); animation: 
 main.sudoku-grid .button-title { width: 40%; height: 70%;margin: auto; position: absolute; top: -17%; left: 0; bottom: 0; right: 0; display: flex;flex-wrap: wrap; justify-content: center; }
 main.sudoku-grid .on .button-title a { color:#13597B; background-color: rgb(162, 173, 205); border-radius: 50%;display: inline-block; text-align: center; padding: 1.9em 0.3em;
 										font-size: 4.3em; text-transform: uppercase; letter-spacing: 15px; width: 42.7%; min-width: 5.47em; height: 5.58em; }
+main.sudoku-grid .on .button-title a.start { line-height: 2; }
 main.sudoku-grid .on .button-title a:hover { text-decoration: none; color:#b8d0ef; background-color: #13597B; }
 main.sudoku-grid .on .button-title span { font-size: 3em;}
 main.sudoku-grid .table { display: none; align-items: center; justify-content: center; height: 100%; flex-wrap: wrap; max-width: 1500px; margin: 0 auto; }
